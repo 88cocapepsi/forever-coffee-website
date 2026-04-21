@@ -798,15 +798,15 @@ export default function ForeverLandingPage() {
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>8 nhóm</div>
+                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>signature</div>
                   <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>
                     Cà phê, sữa, cacao, trà, sinh tố, nước ép, soda, mojito
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>Q7</div>
+                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>Sweet Home</div>
                   <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>
-                    B38 Đường 4A, P. Tân Hưng
+                    B38 Đường 4A, P. Tân Hưng, Q7
                   </div>
                 </div>
               </div>
