@@ -99,97 +99,256 @@ export default function ForeverLandingPage() {
     return menuItems.filter((item) => item.category === activeCategory);
   }, [activeCategory]);
 
+  const colors = {
+    bg: "#120d0a",
+    bg2: "#1a120d",
+    card: "rgba(255,255,255,0.05)",
+    border: "rgba(255,255,255,0.10)",
+    text: "#f5e6d3",
+    muted: "rgba(245,230,211,0.78)",
+    accent: "#d6b58a",
+    accentText: "#120d0a",
+  };
+
+  const shellStyle = {
+    minHeight: "100vh",
+    background: colors.bg,
+    color: colors.text,
+    fontFamily:
+      'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  };
+
+  const containerStyle = {
+    maxWidth: 1240,
+    margin: "0 auto",
+    padding: "0 24px",
+  };
+
+  const glassCard = {
+    background: colors.card,
+    border: `1px solid ${colors.border}`,
+    borderRadius: 28,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+    backdropFilter: "blur(12px)",
+  };
+
+  const navButtonStyle = (active = false) => ({
+    background: active ? "rgba(214,181,138,0.15)" : "transparent",
+    border: "none",
+    color: active ? colors.accent : colors.text,
+    fontSize: 15,
+    cursor: "pointer",
+    padding: "8px 0",
+  });
+
+  const pillButton = {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 18,
+    padding: "14px 24px",
+    fontWeight: 700,
+    fontSize: 15,
+    cursor: "pointer",
+    textDecoration: "none",
+    transition: "all 0.2s ease",
+  };
+
+  const primaryButton = {
+    ...pillButton,
+    background: colors.accent,
+    color: colors.accentText,
+    border: "none",
+    boxShadow: "0 10px 24px rgba(214,181,138,0.20)",
+  };
+
+  const secondaryButton = {
+    ...pillButton,
+    background: "rgba(255,255,255,0.05)",
+    color: colors.text,
+    border: `1px solid ${colors.border}`,
+  };
+
+  const menuCategoryBtn = (active) => ({
+    borderRadius: 999,
+    padding: "12px 20px",
+    fontSize: 14,
+    fontWeight: 700,
+    cursor: "pointer",
+    border: active ? "none" : `1px solid ${colors.border}`,
+    background: active ? colors.accent : "rgba(255,255,255,0.05)",
+    color: active ? colors.accentText : colors.text,
+    boxShadow: active ? "0 10px 24px rgba(214,181,138,0.18)" : "none",
+  });
+
   if (page === "menu") {
     return (
-      <div className="min-h-screen bg-[#120d0a] text-[#f5e6d3]">
-        <header className="sticky top-0 z-40 border-b border-white/10 bg-[#120d0a]/90 backdrop-blur">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <button
-              onClick={() => setPage("home")}
-              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition hover:bg-white/10"
-            >
+      <div style={shellStyle}>
+        <header
+          style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 50,
+            borderBottom: `1px solid ${colors.border}`,
+            background: "rgba(18,13,10,0.90)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <div
+            style={{
+              ...containerStyle,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              paddingTop: 18,
+              paddingBottom: 18,
+              gap: 16,
+              flexWrap: "wrap",
+            }}
+          >
+            <button onClick={() => setPage("home")} style={secondaryButton}>
               ← Quay lại trang chủ
             </button>
-            <div className="text-right">
-              <div className="text-lg font-bold tracking-[0.18em]">FOREVER</div>
-              <div className="text-xs uppercase tracking-[0.3em] text-[#d6b58a]">
+            <div style={{ textAlign: "right" }}>
+              <div style={{ fontSize: 22, fontWeight: 800, letterSpacing: "0.18em" }}>
+                FOREVER
+              </div>
+              <div
+                style={{
+                  fontSize: 12,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.30em",
+                  color: colors.accent,
+                  marginTop: 4,
+                }}
+              >
                 Menu Collection
               </div>
             </div>
           </div>
         </header>
 
-        <section className="mx-auto max-w-7xl px-6 py-12">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-[#d6b58a]">
+        <section style={{ ...containerStyle, paddingTop: 48, paddingBottom: 60 }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              gap: 24,
+              flexWrap: "wrap",
+            }}
+          >
+            <div style={{ maxWidth: 760 }}>
+              <div
+                style={{
+                  fontSize: 12,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.3em",
+                  color: colors.accent,
+                }}
+              >
                 Menu
-              </p>
-              <h1 className="mt-3 text-4xl font-black md:text-6xl">
+              </div>
+              <h1 style={{ fontSize: 56, lineHeight: 1.05, margin: "14px 0 0", fontWeight: 900 }}>
                 Thức uống của FOREVER
               </h1>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-[#f2dfc8]/80 md:text-lg">
-                Chọn một nhóm đồ uống để khám phá hình ảnh, phong cách và cảm giác
-                của từng món. Đây là menu kiểu quảng cáo thương hiệu, tập trung vào
-                trải nghiệm nhìn và cảm xúc.
+              <p style={{ fontSize: 18, lineHeight: 1.8, color: colors.muted, marginTop: 18 }}>
+                Chọn một nhóm đồ uống để khám phá hình ảnh, phong cách và cảm giác của từng món.
+                Đây là menu kiểu quảng cáo thương hiệu, tập trung vào trải nghiệm nhìn và cảm xúc.
               </p>
             </div>
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 text-sm text-[#f2dfc8]/70 shadow-xl backdrop-blur">
+            <div style={{ ...glassCard, padding: "16px 20px", fontSize: 14, color: colors.muted }}>
               {filteredItems.length} món đang hiển thị
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            {categories.map((category) => {
-              const active = activeCategory === category;
-              return (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`rounded-full px-5 py-3 text-sm font-semibold transition ${
-                    active
-                      ? "bg-[#d6b58a] text-[#120d0a] shadow-lg shadow-[#d6b58a]/20"
-                      : "border border-white/10 bg-white/5 text-[#f5e6d3] hover:bg-white/10"
-                  }`}
-                >
-                  {category}
-                </button>
-              );
-            })}
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 28 }}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                style={menuCategoryBtn(activeCategory === category)}
+              >
+                {category}
+              </button>
+            ))}
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 24,
+              marginTop: 32,
+            }}
+          >
             {filteredItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => setSelectedItem(item)}
-                className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 text-left shadow-xl transition hover:-translate-y-1 hover:bg-white/[0.07]"
+                style={{
+                  ...glassCard,
+                  overflow: "hidden",
+                  padding: 0,
+                  textAlign: "left",
+                  cursor: "pointer",
+                }}
               >
-                <div className="relative overflow-hidden">
+                <div style={{ position: "relative" }}>
                   <img
                     src={item.img}
                     alt={item.name}
-                    className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+                    style={{ width: "100%", height: 280, objectFit: "cover", display: "block" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#120d0a]/80 via-transparent to-transparent" />
-                  <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-[#120d0a]/60 px-3 py-1 text-xs uppercase tracking-[0.25em] text-[#d6b58a] backdrop-blur">
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to top, rgba(18,13,10,0.82), rgba(18,13,10,0.00))",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 16,
+                      left: 16,
+                      padding: "8px 12px",
+                      borderRadius: 999,
+                      background: "rgba(18,13,10,0.60)",
+                      border: `1px solid ${colors.border}`,
+                      color: colors.accent,
+                      fontSize: 11,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.22em",
+                    }}
+                  >
                     {item.category}
                   </div>
                 </div>
-                <div className="p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-2xl font-bold leading-tight">
-                      {item.name}
-                    </h3>
-                    <span className="rounded-full bg-[#d6b58a] px-3 py-1 text-sm font-bold text-[#120d0a]">
+                <div style={{ padding: 22 }}>
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "flex-start" }}
+                  >
+                    <h3 style={{ margin: 0, fontSize: 28, lineHeight: 1.15, fontWeight: 800 }}>{item.name}</h3>
+                    <span
+                      style={{
+                        background: colors.accent,
+                        color: colors.accentText,
+                        borderRadius: 999,
+                        padding: "8px 12px",
+                        fontWeight: 800,
+                        fontSize: 14,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
                       {item.price}
                     </span>
                   </div>
-                  <p className="mt-3 text-sm leading-7 text-[#f2dfc8]/75">
+                  <p style={{ marginTop: 14, marginBottom: 0, color: colors.muted, lineHeight: 1.8, fontSize: 14 }}>
                     {item.desc}
                   </p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#d6b58a]">
-                    Xem chi tiết <span>→</span>
+                  <div style={{ marginTop: 18, color: colors.accent, fontWeight: 700, fontSize: 14 }}>
+                    Xem chi tiết →
                   </div>
                 </div>
               </button>
@@ -199,48 +358,71 @@ export default function ForeverLandingPage() {
 
         {selectedItem && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
             onClick={() => setSelectedItem(null)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 100,
+              background: "rgba(0,0,0,0.72)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 16,
+              backdropFilter: "blur(6px)",
+            }}
           >
             <div
-              className="w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#1a120d] shadow-2xl"
               onClick={(e) => e.stopPropagation()}
+              style={{
+                width: "100%",
+                maxWidth: 1040,
+                overflow: "hidden",
+                borderRadius: 32,
+                background: colors.bg2,
+                border: `1px solid ${colors.border}`,
+                boxShadow: "0 30px 60px rgba(0,0,0,0.35)",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              }}
             >
-              <div className="grid md:grid-cols-2">
-                <img
-                  src={selectedItem.img}
-                  alt={selectedItem.name}
-                  className="h-full min-h-[320px] w-full object-cover"
-                />
-                <div className="p-8 md:p-10">
-                  <div className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.25em] text-[#d6b58a]">
-                    {selectedItem.category}
-                  </div>
-                  <h2 className="mt-4 text-4xl font-black">
-                    {selectedItem.name}
-                  </h2>
-                  <div className="mt-4 text-2xl font-bold text-[#d6b58a]">
-                    {selectedItem.price}
-                  </div>
-                  <p className="mt-6 text-base leading-8 text-[#f2dfc8]/80">
-                    {selectedItem.desc} Món này phù hợp để đưa vào website quảng
-                    cáo vì hình ảnh nổi bật, dễ tạo cảm giác ngon mắt và giúp khách
-                    muốn ghé quán trực tiếp để trải nghiệm.
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <button
-                      onClick={() => setSelectedItem(null)}
-                      className="rounded-2xl bg-[#d6b58a] px-5 py-3 font-semibold text-[#120d0a]"
-                    >
-                      Đóng
-                    </button>
-                    <button
-                      onClick={() => setPage("home")}
-                      className="rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold"
-                    >
-                      Về trang chủ
-                    </button>
-                  </div>
+              <img
+                src={selectedItem.img}
+                alt={selectedItem.name}
+                style={{ width: "100%", height: "100%", minHeight: 360, objectFit: "cover" }}
+              />
+              <div style={{ padding: 36 }}>
+                <div
+                  style={{
+                    display: "inline-block",
+                    borderRadius: 999,
+                    padding: "8px 12px",
+                    background: "rgba(255,255,255,0.05)",
+                    border: `1px solid ${colors.border}`,
+                    color: colors.accent,
+                    fontSize: 11,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.22em",
+                  }}
+                >
+                  {selectedItem.category}
+                </div>
+                <h2 style={{ margin: "18px 0 0", fontSize: 44, lineHeight: 1.1, fontWeight: 900 }}>
+                  {selectedItem.name}
+                </h2>
+                <div style={{ marginTop: 16, fontSize: 28, fontWeight: 800, color: colors.accent }}>
+                  {selectedItem.price}
+                </div>
+                <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.9, color: colors.muted }}>
+                  {selectedItem.desc} Món này phù hợp để đưa vào website quảng cáo vì hình ảnh nổi bật,
+                  dễ tạo cảm giác ngon mắt và giúp khách muốn ghé quán trực tiếp để trải nghiệm.
+                </p>
+                <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 24 }}>
+                  <button onClick={() => setSelectedItem(null)} style={primaryButton}>
+                    Đóng
+                  </button>
+                  <button onClick={() => setPage("home")} style={secondaryButton}>
+                    Về trang chủ
+                  </button>
                 </div>
               </div>
             </div>
@@ -251,35 +433,57 @@ export default function ForeverLandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#120d0a] text-[#f5e6d3]">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#120d0a]/85 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <div style={shellStyle}>
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
+          borderBottom: `1px solid ${colors.border}`,
+          background: "rgba(18,13,10,0.85)",
+          backdropFilter: "blur(12px)",
+        }}
+      >
+        <div
+          style={{
+            ...containerStyle,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingTop: 18,
+            paddingBottom: 18,
+            gap: 24,
+            flexWrap: "wrap",
+          }}
+        >
           <div>
-            <div className="text-xl font-bold tracking-[0.2em]">FOREVER</div>
-            <div className="text-xs uppercase tracking-[0.35em] text-[#d6b58a]">
+            <div style={{ fontSize: 24, fontWeight: 800, letterSpacing: "0.20em" }}>FOREVER</div>
+            <div
+              style={{
+                fontSize: 12,
+                textTransform: "uppercase",
+                letterSpacing: "0.35em",
+                color: colors.accent,
+                marginTop: 4,
+              }}
+            >
               Coffee & Beer
             </div>
           </div>
-          <nav className="hidden gap-6 text-sm md:flex">
-            <button
-              onClick={() => setPage("home")}
-              className="hover:text-[#d6b58a]"
-            >
+          <nav style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap" }}>
+            <button onClick={() => setPage("home")} style={navButtonStyle(page === "home")}>
               Trang chủ
             </button>
-            <a href="#about" className="hover:text-[#d6b58a]">
+            <a href="#about" style={{ color: colors.text, textDecoration: "none", fontSize: 15 }}>
               Giới thiệu
             </a>
-            <button
-              onClick={() => setPage("menu")}
-              className="hover:text-[#d6b58a]"
-            >
+            <button onClick={() => setPage("menu")} style={navButtonStyle(false)}>
               Menu
             </button>
-            <a href="#gallery" className="hover:text-[#d6b58a]">
+            <a href="#gallery" style={{ color: colors.text, textDecoration: "none", fontSize: 15 }}>
               Hình ảnh
             </a>
-            <a href="#contact" className="hover:text-[#d6b58a]">
+            <a href="#contact" style={{ color: colors.text, textDecoration: "none", fontSize: 15 }}>
               Liên hệ
             </a>
           </nav>
@@ -288,83 +492,121 @@ export default function ForeverLandingPage() {
 
       <section
         id="home"
-        className="relative overflow-hidden"
         style={{
+          position: "relative",
+          overflow: "hidden",
           backgroundImage:
             "linear-gradient(rgba(18,13,10,0.55), rgba(18,13,10,0.85)), url(https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-10 px-6 py-20 md:grid-cols-2">
+        <div
+          style={{
+            ...containerStyle,
+            minHeight: "88vh",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            alignItems: "center",
+            gap: 40,
+            paddingTop: 80,
+            paddingBottom: 80,
+          }}
+        >
           <div>
-            <p className="mb-4 inline-block rounded-full border border-[#d6b58a]/40 bg-[#d6b58a]/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-[#e8c69c]">
+            <div
+              style={{
+                display: "inline-block",
+                padding: "10px 16px",
+                borderRadius: 999,
+                border: "1px solid rgba(214,181,138,0.4)",
+                background: "rgba(214,181,138,0.10)",
+                color: "#e8c69c",
+                fontSize: 12,
+                textTransform: "uppercase",
+                letterSpacing: "0.30em",
+                marginBottom: 18,
+              }}
+            >
               Forever, nơi bình yên là thật!
-            </p>
-            <h1 className="max-w-3xl text-5xl font-black leading-tight md:text-7xl">
-              FOREVER <span className="text-[#d6b58a]">Coffee & Beer</span>
+            </div>
+            <h1 style={{ fontSize: 76, lineHeight: 1.02, margin: 0, fontWeight: 900, maxWidth: 720 }}>
+              FOREVER <span style={{ color: colors.accent }}>Coffee & Beer</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#f2dfc8]/85">
-              Một không gian thư giãn, ấm áp và có chiều sâu. Nơi những ly cà phê,
-              trà, soda và những câu chuyện đẹp cùng nhau ở lại lâu hơn một chút.
+            <p style={{ marginTop: 24, maxWidth: 640, fontSize: 22, lineHeight: 1.8, color: colors.muted }}>
+              Một không gian thư giãn, ấm áp và có chiều sâu. Nơi những ly cà phê, trà, soda và
+              những câu chuyện đẹp cùng nhau ở lại lâu hơn một chút.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <button
-                onClick={() => setPage("menu")}
-                className="rounded-2xl bg-[#d6b58a] px-6 py-3 font-semibold text-[#120d0a] shadow-lg shadow-[#d6b58a]/20 transition hover:-translate-y-0.5"
-              >
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 28 }}>
+              <button onClick={() => setPage("menu")} style={primaryButton}>
                 Xem menu
               </button>
-              <a
-                href="#contact"
-                className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold transition hover:bg-white/10"
-              >
+              <a href="#contact" style={secondaryButton}>
                 Tìm đường đến quán
               </a>
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
-              <div className="text-sm uppercase tracking-[0.3em] text-[#d6b58a]">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: 18,
+            }}
+          >
+            <div style={{ ...glassCard, padding: 24 }}>
+              <div
+                style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}
+              >
                 Vibe
               </div>
-              <div className="mt-4 text-3xl font-bold">Ấm áp · Đêm · Chill</div>
-              <p className="mt-3 text-sm leading-7 text-[#f2dfc8]/75">
-                Ánh sáng vàng, âm nhạc vừa đủ, đồ uống chỉn chu và không gian mang
-                cảm giác kể chuyện.
+              <div style={{ fontSize: 40, fontWeight: 800, marginTop: 14, lineHeight: 1.15 }}>
+                Ấm áp · Đêm · Chill
+              </div>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: colors.muted, marginTop: 14 }}>
+                Ánh sáng vàng, âm nhạc vừa đủ, đồ uống chỉn chu và không gian mang cảm giác kể chuyện.
               </p>
             </div>
-            <div className="rounded-3xl border border-white/10 bg-[#2b1c12]/80 p-6 shadow-2xl">
-              <div className="text-sm uppercase tracking-[0.3em] text-[#d6b58a]">
+            <div style={{ ...glassCard, padding: 24, background: "rgba(43,28,18,0.80)" }}>
+              <div
+                style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}
+              >
                 Thông điệp
               </div>
-              <div className="mt-4 text-3xl font-bold">Ai cũng có tuổi trẻ</div>
-              <p className="mt-3 text-sm leading-7 text-[#f2dfc8]/75">
+              <div style={{ fontSize: 40, fontWeight: 800, marginTop: 14, lineHeight: 1.15 }}>
+                Ai cũng có tuổi trẻ
+              </div>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: colors.muted, marginTop: 14 }}>
                 FOREVER dừng lại một chút, uống một ly ngon và thấy mình nhẹ hơn.
               </p>
             </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur md:col-span-2">
-              <div className="grid gap-6 md:grid-cols-3">
+            <div
+              style={{
+                ...glassCard,
+                padding: 24,
+                gridColumn: "1 / -1",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+                  gap: 18,
+                }}
+              >
                 <div>
-                  <div className="text-3xl font-black text-[#d6b58a]">2019</div>
-                  <div className="mt-2 text-sm text-[#f2dfc8]/75">
-                    Khởi đầu hành trình thương hiệu
-                  </div>
+                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>2019</div>
+                  <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>Khởi đầu hành trình thương hiệu</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#d6b58a]">
-                    Signature
-                  </div>
-                  <div className="mt-2 text-sm text-[#f2dfc8]/75">
+                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>Signature</div>
+                  <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>
                     Cà phê, trà và đồ uống chill style FOREVER
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#d6b58a]">Q7</div>
-                  <div className="mt-2 text-sm text-[#f2dfc8]/75">
-                    B38 Đường 4A, P. Tân Hưng
-                  </div>
+                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>Q7</div>
+                  <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>B38 Đường 4A, P. Tân Hưng</div>
                 </div>
               </div>
             </div>
@@ -372,31 +614,43 @@ export default function ForeverLandingPage() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-10 md:grid-cols-2">
+      <section id="about" style={{ ...containerStyle, paddingTop: 80, paddingBottom: 80 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: 40,
+            alignItems: "start",
+          }}
+        >
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[#d6b58a]">
+            <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Giới thiệu
-            </p>
-            <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+            </div>
+            <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900 }}>
               Không chỉ là quán cà phê
             </h2>
-            <p className="mt-6 text-lg leading-8 text-[#f2dfc8]/80">
-              FOREVER Coffee & Beer hướng đến cảm giác gần gũi, đẹp vừa đủ và có
-              bản sắc. Đây là nơi để gặp bạn bè, thư giãn sau một ngày dài, hoặc
-              ngồi một mình giữa không gian nhẹ nhàng mà vẫn có cá tính.
+            <p style={{ marginTop: 24, fontSize: 20, lineHeight: 1.85, color: colors.muted }}>
+              FOREVER Coffee & Beer hướng đến cảm giác gần gũi, đẹp vừa đủ và có bản sắc. Đây là nơi
+              để gặp bạn bè, thư giãn sau một ngày dài, hoặc ngồi một mình giữa không gian nhẹ nhàng mà
+              vẫn có cá tính.
             </p>
-            <p className="mt-4 text-lg leading-8 text-[#f2dfc8]/80">
-              Website này không tập trung bán hàng online, mà tập trung kể câu
-              chuyện thương hiệu, cho khách thấy chất riêng của quán và khiến họ
-              muốn ghé trực tiếp.
+            <p style={{ marginTop: 18, fontSize: 20, lineHeight: 1.85, color: colors.muted }}>
+              Website này không tập trung bán hàng online, mà tập trung kể câu chuyện thương hiệu, cho
+              khách thấy chất riêng của quán và khiến họ muốn ghé trực tiếp.
             </p>
           </div>
-          <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#2a1c13] to-[#17110d] p-8 shadow-2xl">
-            <div className="text-sm uppercase tracking-[0.3em] text-[#d6b58a]">
+          <div
+            style={{
+              ...glassCard,
+              padding: 32,
+              background: "linear-gradient(135deg, #2a1c13, #17110d)",
+            }}
+          >
+            <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Tuyên ngôn thương hiệu
             </div>
-            <div className="mt-6 space-y-5 text-2xl font-semibold leading-relaxed">
+            <div style={{ marginTop: 24, display: "grid", gap: 18, fontSize: 34, lineHeight: 1.4, fontWeight: 700 }}>
               <div>Không hustle — chỉ chill.</div>
               <div>Nơi kể chuyện, tâm sự mỏng.</div>
               <div>Forever, nghe tim mình thương.</div>
@@ -406,87 +660,87 @@ export default function ForeverLandingPage() {
         </div>
       </section>
 
-      <section id="gallery" className="mx-auto max-w-7xl px-6 py-20">
-        <p className="text-sm uppercase tracking-[0.3em] text-[#d6b58a]">
+      <section id="gallery" style={{ ...containerStyle, paddingBottom: 80 }}>
+        <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
           Hình ảnh
-        </p>
-        <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+        </div>
+        <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900 }}>
           Một chút không khí của FOREVER
         </h2>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 20,
+            marginTop: 32,
+          }}
+        >
           {menuItems.slice(0, 4).map((item, i) => (
-            <div
-              key={i}
-              className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-xl"
-            >
-              <img
-                src={item.img}
-                alt={item.name}
-                className="h-80 w-full object-cover transition duration-500 hover:scale-105"
-              />
+            <div key={i} style={{ ...glassCard, overflow: "hidden" }}>
+              <img src={item.img} alt={item.name} style={{ width: "100%", height: 320, objectFit: "cover", display: "block" }} />
             </div>
           ))}
         </div>
       </section>
 
-      <section id="contact" className="bg-[#1a120d] py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2">
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#d6b58a]">
+      <section id="contact" style={{ background: colors.bg2, padding: "80px 0" }}>
+        <div
+          style={{
+            ...containerStyle,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: 28,
+          }}
+        >
+          <div style={{ ...glassCard, padding: 32 }}>
+            <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Liên hệ
-            </p>
-            <h2 className="mt-4 text-4xl font-bold">Ghé quán một tối gần nhất</h2>
-            <div className="mt-8 space-y-4 text-lg text-[#f2dfc8]/85">
-              <p>
-                <span className="font-semibold text-white">Địa chỉ:</span> B38
-                Đường 4A, P. Tân Hưng, Q.7
-              </p>
-              <p>
-                <span className="font-semibold text-white">Điện thoại:</span> 0708
-                888 0891
-              </p>
-              <p>
-                <span className="font-semibold text-white">Facebook:</span> FOREVER
-                Coffee & Beer
-              </p>
-              <p>
-                <span className="font-semibold text-white">Giờ mở cửa:</span> 07:00
-                – 23:00
-              </p>
             </div>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl bg-[#d6b58a] px-6 py-3 font-semibold text-[#120d0a]"
-              >
+            <h2 style={{ margin: "16px 0 0", fontSize: 48, lineHeight: 1.12, fontWeight: 900 }}>
+              Ghé quán một tối gần nhất
+            </h2>
+            <div style={{ marginTop: 28, display: "grid", gap: 14, fontSize: 20, lineHeight: 1.8, color: colors.muted }}>
+              <div><span style={{ color: colors.text, fontWeight: 700 }}>Địa chỉ:</span> B38 Đường 4A, P. Tân Hưng, Q.7</div>
+              <div><span style={{ color: colors.text, fontWeight: 700 }}>Điện thoại:</span> 0708 888 0891</div>
+              <div><span style={{ color: colors.text, fontWeight: 700 }}>Facebook:</span> FOREVER Coffee & Beer</div>
+              <div><span style={{ color: colors.text, fontWeight: 700 }}>Giờ mở cửa:</span> 07:00 – 23:00</div>
+            </div>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26 }}>
+              <a href="https://maps.google.com" target="_blank" rel="noreferrer" style={primaryButton}>
                 Mở Google Maps
               </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold"
-              >
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" style={secondaryButton}>
                 Xem fanpage
               </a>
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
+          <div style={{ ...glassCard, overflow: "hidden", minHeight: 440 }}>
             <iframe
               title="Forever Coffee & Beer Map"
               src="https://www.google.com/maps?q=B38%20%C4%90%C6%B0%E1%BB%9Dng%204A%2C%20P.%20T%C3%A2n%20H%C6%B0ng%2C%20Q.7&output=embed"
-              className="h-full min-h-[420px] w-full"
+              style={{ width: "100%", height: "100%", minHeight: 440, border: 0 }}
               loading="lazy"
             />
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-[#120d0a]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-8 text-sm text-[#f2dfc8]/60 md:flex-row md:items-center md:justify-between">
+      <footer style={{ borderTop: `1px solid ${colors.border}`, background: colors.bg }}>
+        <div
+          style={{
+            ...containerStyle,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 12,
+            flexWrap: "wrap",
+            paddingTop: 24,
+            paddingBottom: 24,
+            fontSize: 14,
+            color: "rgba(245,230,211,0.60)",
+          }}
+        >
           <div>© 2026 FOREVER Coffee & Beer. All rights reserved.</div>
           <div>Thiết kế theo phong cách cinematic · ấm áp · hiện đại</div>
         </div>
