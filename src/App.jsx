@@ -838,7 +838,7 @@ export default function ForeverLandingPage() {
             </p>
             <p style={{ marginTop: 18, fontSize: 20, lineHeight: 1.85, color: colors.muted }}>
               Website này không tập trung bán hàng online, mà tập trung kể câu chuyện thương hiệu, cho
-              khách thấy món thật, ảnh thật và vibe thật của quán.
+              khách thấy món thật, ảnh thật và vibe thật của quán. Tuy nhiên bạn cũng có thể ngồi ở nhà lựa chọn món trong menu và gọi tới số điện thoại quán để order.^^
             </p>
           </div>
           <div
