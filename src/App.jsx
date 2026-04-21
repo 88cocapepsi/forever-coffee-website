@@ -1,9 +1,22 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function ForeverLandingPage() {
   const [page, setPage] = useState("home");
   const [activeCategory, setActiveCategory] = useState("Tất cả");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1280
+  );
+
+  useEffect(() => {
+    const onResize = () => setWindowWidth(window.innerWidth);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const isMobile = windowWidth <= 768;
+  const isTablet = windowWidth <= 1024;
 
   const img = (file) => `/drinks/${file}`;
 
@@ -279,13 +292,13 @@ export default function ForeverLandingPage() {
   const containerStyle = {
     maxWidth: 1240,
     margin: "0 auto",
-    padding: "0 24px",
+    padding: isMobile ? "0 16px" : "0 24px",
   };
 
   const glassCard = {
     background: colors.card,
     border: `1px solid ${colors.border}`,
-    borderRadius: 28,
+    borderRadius: isMobile ? 22 : 28,
     boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
     backdropFilter: "blur(12px)",
   };
@@ -299,14 +312,28 @@ export default function ForeverLandingPage() {
     padding: "8px 0",
   });
 
+  const mobileNavButtonStyle = (active = false) => ({
+    background: active ? "rgba(214,181,138,0.15)" : "rgba(255,255,255,0.04)",
+    border: `1px solid ${colors.border}`,
+    color: active ? colors.accent : colors.text,
+    fontSize: 14,
+    cursor: "pointer",
+    padding: "10px 14px",
+    borderRadius: 14,
+    textDecoration: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+  });
+
   const pillButton = {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 18,
-    padding: "14px 24px",
+    padding: isMobile ? "13px 18px" : "14px 24px",
     fontWeight: 700,
-    fontSize: 15,
+    fontSize: isMobile ? 14 : 15,
     cursor: "pointer",
     textDecoration: "none",
     transition: "all 0.2s ease",
@@ -329,14 +356,15 @@ export default function ForeverLandingPage() {
 
   const menuCategoryBtn = (active) => ({
     borderRadius: 999,
-    padding: "12px 20px",
-    fontSize: 14,
+    padding: isMobile ? "11px 16px" : "12px 20px",
+    fontSize: isMobile ? 13 : 14,
     fontWeight: 700,
     cursor: "pointer",
     border: active ? "none" : `1px solid ${colors.border}`,
     background: active ? colors.accent : "rgba(255,255,255,0.05)",
     color: active ? colors.accentText : colors.text,
     boxShadow: active ? "0 10px 24px rgba(214,181,138,0.18)" : "none",
+    whiteSpace: "nowrap",
   });
 
   const featuredGallery = [
@@ -364,18 +392,19 @@ export default function ForeverLandingPage() {
               ...containerStyle,
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "center",
+              alignItems: isMobile ? "stretch" : "center",
               paddingTop: 18,
               paddingBottom: 18,
               gap: 16,
               flexWrap: "wrap",
+              flexDirection: isMobile ? "column-reverse" : "row",
             }}
           >
-            <button onClick={() => setPage("home")} style={secondaryButton}>
+            <button onClick={() => setPage("home")} style={{ ...secondaryButton, width: isMobile ? "100%" : "auto" }}>
               ← Quay lại trang chủ
             </button>
-            <div style={{ textAlign: "right" }}>
-              <div style={{ fontSize: 22, fontWeight: 800, letterSpacing: "0.18em" }}>
+            <div style={{ textAlign: isMobile ? "left" : "right", width: isMobile ? "100%" : "auto" }}>
+              <div style={{ fontSize: isMobile ? 18 : 22, fontWeight: 800, letterSpacing: "0.18em" }}>
                 FOREVER
               </div>
               <div
@@ -393,7 +422,7 @@ export default function ForeverLandingPage() {
           </div>
         </header>
 
-        <section style={{ ...containerStyle, paddingTop: 48, paddingBottom: 60 }}>
+        <section style={{ ...containerStyle, paddingTop: isMobile ? 32 : 48, paddingBottom: 60 }}>
           <div
             style={{
               display: "flex",
@@ -414,15 +443,15 @@ export default function ForeverLandingPage() {
               >
                 Menu thật của quán
               </div>
-              <h1 style={{ fontSize: 56, lineHeight: 1.05, margin: "14px 0 0", fontWeight: 900, color: colors.heading }}>
+              <h1 style={{ fontSize: isMobile ? 34 : 56, lineHeight: 1.05, margin: "14px 0 0", fontWeight: 900, color: colors.heading }}>
                 Thức uống của FOREVER
               </h1>
-              <p style={{ fontSize: 18, lineHeight: 1.8, color: colors.muted, marginTop: 18 }}>
+              <p style={{ fontSize: isMobile ? 16 : 18, lineHeight: 1.8, color: colors.muted, marginTop: 18 }}>
                 Menu được cập nhật theo bảng món thật của quán, kết hợp ảnh đồ uống thật
                 để khách có thể xem trực quan trước khi ghé quán.
               </p>
             </div>
-            <div style={{ ...glassCard, padding: "16px 20px", fontSize: 14, color: colors.muted }}>
+            <div style={{ ...glassCard, padding: "16px 20px", fontSize: 14, color: colors.muted, width: isMobile ? "100%" : "auto" }}>
               {filteredItems.length} món đang hiển thị
             </div>
           </div>
@@ -442,7 +471,7 @@ export default function ForeverLandingPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(280px, 1fr))",
               gap: 24,
               marginTop: 32,
             }}
@@ -463,7 +492,7 @@ export default function ForeverLandingPage() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    style={{ width: "100%", height: 280, objectFit: "cover", display: "block" }}
+                    style={{ width: "100%", height: isMobile ? 220 : 280, objectFit: "cover", display: "block" }}
                   />
                   <div
                     style={{
@@ -490,7 +519,7 @@ export default function ForeverLandingPage() {
                     {item.category}
                   </div>
                 </div>
-                <div style={{ padding: 22 }}>
+                <div style={{ padding: isMobile ? 18 : 22 }}>
                   <div
                     style={{
                       display: "flex",
@@ -502,7 +531,7 @@ export default function ForeverLandingPage() {
                     <h3
                       style={{
                         margin: 0,
-                        fontSize: 28,
+                        fontSize: isMobile ? 24 : 28,
                         lineHeight: 1.15,
                         fontWeight: 800,
                         color: colors.drinkName,
@@ -545,9 +574,9 @@ export default function ForeverLandingPage() {
               zIndex: 100,
               background: "rgba(0,0,0,0.72)",
               display: "flex",
-              alignItems: "center",
+              alignItems: isMobile ? "flex-end" : "center",
               justifyContent: "center",
-              padding: 16,
+              padding: isMobile ? 0 : 16,
               backdropFilter: "blur(6px)",
             }}
           >
@@ -556,21 +585,22 @@ export default function ForeverLandingPage() {
               style={{
                 width: "100%",
                 maxWidth: 1040,
-                overflow: "hidden",
-                borderRadius: 32,
+                maxHeight: isMobile ? "92vh" : "auto",
+                overflowY: isMobile ? "auto" : "hidden",
+                borderRadius: isMobile ? "24px 24px 0 0" : 32,
                 background: colors.bg2,
                 border: `1px solid ${colors.border}`,
                 boxShadow: "0 30px 60px rgba(0,0,0,0.35)",
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(320px, 1fr))",
               }}
             >
               <img
                 src={selectedItem.image}
                 alt={selectedItem.name}
-                style={{ width: "100%", height: "100%", minHeight: 360, objectFit: "cover" }}
+                style={{ width: "100%", height: isMobile ? 260 : "100%", minHeight: isMobile ? 260 : 360, objectFit: "cover" }}
               />
-              <div style={{ padding: 36 }}>
+              <div style={{ padding: isMobile ? 22 : 36 }}>
                 <div
                   style={{
                     display: "inline-block",
@@ -589,7 +619,7 @@ export default function ForeverLandingPage() {
                 <h2
                   style={{
                     margin: "18px 0 0",
-                    fontSize: 44,
+                    fontSize: isMobile ? 30 : 44,
                     lineHeight: 1.1,
                     fontWeight: 900,
                     color: colors.drinkName,
@@ -597,17 +627,17 @@ export default function ForeverLandingPage() {
                 >
                   {selectedItem.name}
                 </h2>
-                <div style={{ marginTop: 16, fontSize: 28, fontWeight: 800, color: colors.accent }}>
+                <div style={{ marginTop: 16, fontSize: isMobile ? 24 : 28, fontWeight: 800, color: colors.accent }}>
                   {selectedItem.price}
                 </div>
-                <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.9, color: colors.muted }}>
+                <p style={{ marginTop: 22, fontSize: isMobile ? 15 : 17, lineHeight: 1.9, color: colors.muted }}>
                   {selectedItem.desc}
                 </p>
-                <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 24 }}>
-                  <button onClick={() => setSelectedItem(null)} style={primaryButton}>
+                <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 24, flexDirection: isMobile ? "column" : "row" }}>
+                  <button onClick={() => setSelectedItem(null)} style={{ ...primaryButton, width: isMobile ? "100%" : "auto" }}>
                     Đóng
                   </button>
-                  <button onClick={() => setPage("home")} style={secondaryButton}>
+                  <button onClick={() => setPage("home")} style={{ ...secondaryButton, width: isMobile ? "100%" : "auto" }}>
                     Về trang chủ
                   </button>
                 </div>
@@ -636,15 +666,16 @@ export default function ForeverLandingPage() {
             ...containerStyle,
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: isMobile ? "flex-start" : "center",
             paddingTop: 18,
             paddingBottom: 18,
             gap: 24,
             flexWrap: "wrap",
+            flexDirection: isMobile ? "column" : "row",
           }}
         >
           <div>
-            <div style={{ fontSize: 24, fontWeight: 800, letterSpacing: "0.20em" }}>FOREVER</div>
+            <div style={{ fontSize: isMobile ? 20 : 24, fontWeight: 800, letterSpacing: "0.20em" }}>FOREVER</div>
             <div
               style={{
                 fontSize: 12,
@@ -657,20 +688,20 @@ export default function ForeverLandingPage() {
               Coffee & Beer
             </div>
           </div>
-          <nav style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap" }}>
-            <button onClick={() => setPage("home")} style={navButtonStyle(page === "home")}>
+          <nav style={{ display: "flex", gap: isMobile ? 10 : 24, alignItems: "center", flexWrap: "wrap", width: isMobile ? "100%" : "auto" }}>
+            <button onClick={() => setPage("home")} style={isMobile ? mobileNavButtonStyle(page === "home") : navButtonStyle(page === "home")}>
               Trang chủ
             </button>
-            <a href="#about" style={{ color: colors.text, textDecoration: "none", fontSize: 15 }}>
+            <a href="#about" style={isMobile ? mobileNavButtonStyle(false) : { color: colors.text, textDecoration: "none", fontSize: 15 }}>
               Giới thiệu
             </a>
-            <button onClick={() => setPage("menu")} style={navButtonStyle(false)}>
+            <button onClick={() => setPage("menu")} style={isMobile ? mobileNavButtonStyle(false) : navButtonStyle(false)}>
               Menu
             </button>
-            <a href="#gallery" style={{ color: colors.text, textDecoration: "none", fontSize: 15 }}>
+            <a href="#gallery" style={isMobile ? mobileNavButtonStyle(false) : { color: colors.text, textDecoration: "none", fontSize: 15 }}>
               Hình ảnh
             </a>
-            <a href="#contact" style={{ color: colors.text, textDecoration: "none", fontSize: 15 }}>
+            <a href="#contact" style={isMobile ? mobileNavButtonStyle(false) : { color: colors.text, textDecoration: "none", fontSize: 15 }}>
               Liên hệ
             </a>
           </nav>
@@ -691,13 +722,13 @@ export default function ForeverLandingPage() {
         <div
           style={{
             ...containerStyle,
-            minHeight: "88vh",
+            minHeight: isMobile ? "auto" : "88vh",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(320px, 1fr))",
             alignItems: "center",
-            gap: 40,
-            paddingTop: 80,
-            paddingBottom: 80,
+            gap: 28,
+            paddingTop: isMobile ? 48 : 80,
+            paddingBottom: isMobile ? 48 : 80,
           }}
         >
           <div>
@@ -709,26 +740,26 @@ export default function ForeverLandingPage() {
                 border: "1px solid rgba(214,181,138,0.4)",
                 background: "rgba(214,181,138,0.10)",
                 color: "#e8c69c",
-                fontSize: 12,
+                fontSize: isMobile ? 10 : 12,
                 textTransform: "uppercase",
-                letterSpacing: "0.30em",
+                letterSpacing: isMobile ? "0.18em" : "0.30em",
                 marginBottom: 18,
               }}
             >
               Forever, nơi bình yên là thật!
             </div>
-            <h1 style={{ fontSize: 76, lineHeight: 1.02, margin: 0, fontWeight: 900, maxWidth: 720, color: colors.heading }}>
+            <h1 style={{ fontSize: isMobile ? 42 : isTablet ? 58 : 76, lineHeight: 1.02, margin: 0, fontWeight: 900, maxWidth: 720, color: colors.heading }}>
               FOREVER <span style={{ color: colors.accent }}>Coffee & Beer</span>
             </h1>
-            <p style={{ marginTop: 24, maxWidth: 640, fontSize: 22, lineHeight: 1.8, color: colors.muted }}>
+            <p style={{ marginTop: 24, maxWidth: 640, fontSize: isMobile ? 18 : 22, lineHeight: 1.8, color: colors.muted }}>
               Một không gian thư giãn, ấm áp và có chiều sâu. Nơi những ly cà phê, trà, soda,
               mojito và những câu chuyện đẹp cùng nhau ở lại lâu hơn một chút.
             </p>
-            <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 28 }}>
-              <button onClick={() => setPage("menu")} style={primaryButton}>
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 28, flexDirection: isMobile ? "column" : "row" }}>
+              <button onClick={() => setPage("menu")} style={{ ...primaryButton, width: isMobile ? "100%" : "auto" }}>
                 Xem menu
               </button>
-              <a href="#contact" style={secondaryButton}>
+              <a href="#contact" style={{ ...secondaryButton, width: isMobile ? "100%" : "auto" }}>
                 Tìm đường đến quán
               </a>
             </div>
@@ -737,11 +768,11 @@ export default function ForeverLandingPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))",
               gap: 18,
             }}
           >
-            <div style={{ ...glassCard, padding: 24 }}>
+            <div style={{ ...glassCard, padding: isMobile ? 20 : 24 }}>
               <div
                 style={{
                   fontSize: 12,
@@ -752,14 +783,14 @@ export default function ForeverLandingPage() {
               >
                 Vibe
               </div>
-              <div style={{ fontSize: 40, fontWeight: 800, marginTop: 14, lineHeight: 1.15 }}>
+              <div style={{ fontSize: isMobile ? 28 : 40, fontWeight: 800, marginTop: 14, lineHeight: 1.15 }}>
                 Ấm áp · Đêm · Chill
               </div>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: colors.muted, marginTop: 14 }}>
                 Ánh sáng vàng, đồ uống thật và cảm giác gần gũi đúng chất FOREVER.
               </p>
             </div>
-            <div style={{ ...glassCard, padding: 24, background: "rgba(43,28,18,0.80)" }}>
+            <div style={{ ...glassCard, padding: isMobile ? 20 : 24, background: "rgba(43,28,18,0.80)" }}>
               <div
                 style={{
                   fontSize: 12,
@@ -770,7 +801,7 @@ export default function ForeverLandingPage() {
               >
                 Menu thật
               </div>
-              <div style={{ fontSize: 40, fontWeight: 800, marginTop: 14, lineHeight: 1.15 }}>
+              <div style={{ fontSize: isMobile ? 28 : 40, fontWeight: 800, marginTop: 14, lineHeight: 1.15 }}>
                 {allItems.length} món đồ uống
               </div>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: colors.muted, marginTop: 14 }}>
@@ -780,33 +811,33 @@ export default function ForeverLandingPage() {
             <div
               style={{
                 ...glassCard,
-                padding: 24,
+                padding: isMobile ? 20 : 24,
                 gridColumn: "1 / -1",
               }}
             >
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+                  gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(160px, 1fr))",
                   gap: 18,
                 }}
               >
                 <div>
-                  <div style={{ fontSize: 40, fontWeight: 900, color: colors.accent }}>2019</div>
+                  <div style={{ fontSize: isMobile ? 30 : 35, fontWeight: 900, color: colors.accent }}>2019</div>
                   <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>
                     Khởi đầu hành trình thương hiệu
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 30, fontWeight: 900, color: colors.accent }}>signature</div>
+                  <div style={{ fontSize: isMobile ? 30 : 30, fontWeight: 900, color: colors.accent }}>Signature</div>
                   <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>
                     Cà phê, sữa, cacao, trà, sinh tố, nước ép, soda, mojito
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 30, fontWeight: 900, color: colors.accent }}>Sweet Home</div>
+                  <div style={{ fontSize: isMobile ? 30 : 30, fontWeight: 900, color: colors.accent }}>Sweet Home</div>
                   <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>
-                    B38 Đường 4A, P. Tân Hưng, Q7
+                    B38 Đường 4A, P. Tân Hưng
                   </div>
                 </div>
               </div>
@@ -815,12 +846,12 @@ export default function ForeverLandingPage() {
         </div>
       </section>
 
-      <section id="about" style={{ ...containerStyle, paddingTop: 80, paddingBottom: 80 }}>
+      <section id="about" style={{ ...containerStyle, paddingTop: isMobile ? 56 : 80, paddingBottom: isMobile ? 56 : 80 }}>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: 40,
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: 32,
             alignItems: "start",
           }}
         >
@@ -828,30 +859,30 @@ export default function ForeverLandingPage() {
             <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Giới thiệu
             </div>
-            <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900, color: colors.heading }}>
+            <h2 style={{ margin: "16px 0 0", fontSize: isMobile ? 34 : 56, lineHeight: 1.1, fontWeight: 900, color: colors.heading }}>
               Không chỉ là quán cà phê
             </h2>
-            <p style={{ marginTop: 24, fontSize: 20, lineHeight: 1.85, color: colors.muted }}>
+            <p style={{ marginTop: 24, fontSize: isMobile ? 17 : 20, lineHeight: 1.85, color: colors.muted }}>
               FOREVER Coffee & Beer hướng đến cảm giác gần gũi, đẹp vừa đủ và có bản sắc. Đây là nơi
               để gặp bạn bè, thư giãn sau một ngày dài, hoặc ngồi một mình giữa không gian nhẹ nhàng mà
               vẫn có cá tính.
             </p>
-            <p style={{ marginTop: 18, fontSize: 20, lineHeight: 1.85, color: colors.muted }}>
+            <p style={{ marginTop: 18, fontSize: isMobile ? 17 : 20, lineHeight: 1.85, color: colors.muted }}>
               Website này không tập trung bán hàng online, mà tập trung kể câu chuyện thương hiệu, cho
-              khách thấy món thật, ảnh thật và vibe thật của quán. Tuy nhiên bạn cũng có thể ngồi ở nhà lựa chọn món trong menu và gọi tới số điện thoại quán để order.^^
+              khách thấy món thật, ảnh thật và vibe thật của quán. Tuy nhiên bạn có thể ngồi ở nhà xem menu và gọi tới số phone của quán để order !
             </p>
           </div>
           <div
             style={{
               ...glassCard,
-              padding: 32,
+              padding: isMobile ? 24 : 32,
               background: "linear-gradient(135deg, #2a1c13, #17110d)",
             }}
           >
             <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Tuyên ngôn thương hiệu
             </div>
-            <div style={{ marginTop: 24, display: "grid", gap: 18, fontSize: 34, lineHeight: 1.4, fontWeight: 700 }}>
+            <div style={{ marginTop: 24, display: "grid", gap: 18, fontSize: isMobile ? 24 : 34, lineHeight: 1.4, fontWeight: 700 }}>
               <div>Không hustle — chỉ chill.</div>
               <div>Nơi kể chuyện, tâm sự mỏng.</div>
               <div>Forever, nghe tim mình thương.</div>
@@ -861,91 +892,61 @@ export default function ForeverLandingPage() {
         </div>
       </section>
 
-      <section id="gallery" style={{ ...containerStyle, paddingBottom: 80 }}>
+      <section id="gallery" style={{ ...containerStyle, paddingBottom: isMobile ? 56 : 80 }}>
         <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
           Hình ảnh
         </div>
-        <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900, color: colors.heading }}>
+        <h2 style={{ margin: "16px 0 0", fontSize: isMobile ? 34 : 56, lineHeight: 1.1, fontWeight: 900, color: colors.heading }}>
           Một chút không khí của FOREVER
         </h2>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: 20,
+            gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 16,
             marginTop: 32,
           }}
         >
           {featuredGallery.map((src, i) => (
             <div key={i} style={{ ...glassCard, overflow: "hidden" }}>
-              <img src={src} alt={`Forever ${i + 1}`} style={{ width: "100%", height: 320, objectFit: "cover", display: "block" }} />
+              <img src={src} alt={`Forever ${i + 1}`} style={{ width: "100%", height: isMobile ? 180 : 320, objectFit: "cover", display: "block" }} />
             </div>
           ))}
         </div>
       </section>
 
-      <section id="contact" style={{ background: colors.bg2, padding: "80px 0" }}>
+      <section id="contact" style={{ background: colors.bg2, padding: isMobile ? "56px 0" : "80px 0" }}>
         <div
           style={{
             ...containerStyle,
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: 28,
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: 24,
           }}
         >
-          <div style={{ ...glassCard, padding: 32 }}>
+          <div style={{ ...glassCard, padding: isMobile ? 24 : 32 }}>
             <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Liên hệ
             </div>
-            <h2 style={{ margin: "16px 0 0", fontSize: 48, lineHeight: 1.12, fontWeight: 900, color: colors.heading }}>
+            <h2 style={{ margin: "16px 0 0", fontSize: isMobile ? 34 : 48, lineHeight: 1.12, fontWeight: 900, color: colors.heading }}>
               Ghé quán một tối gần nhất
             </h2>
-            <div style={{ marginTop: 28, display: "grid", gap: 14, fontSize: 20, lineHeight: 1.8, color: colors.muted }}>
+            <div style={{ marginTop: 28, display: "grid", gap: 14, fontSize: isMobile ? 17 : 20, lineHeight: 1.8, color: colors.muted }}>
               <div><span style={{ color: colors.text, fontWeight: 700 }}>Địa chỉ:</span> B38 Đường 4A, P. Tân Hưng, Q.7</div>
               <div><span style={{ color: colors.text, fontWeight: 700 }}>Điện thoại:</span> 078 888 0891</div>
               <div><span style={{ color: colors.text, fontWeight: 700 }}>Facebook:</span> FOREVER Coffee & Beer</div>
               <div><span style={{ color: colors.text, fontWeight: 700 }}>Giờ mở cửa:</span> 10:00 – 23:00</div>
             </div>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26 }}>
-              <a href="https://maps.google.com" target="_blank" rel="noreferrer" style={primaryButton}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26, flexDirection: isMobile ? "column" : "row" }}>
+              <a href="https://maps.google.com" target="_blank" rel="noreferrer" style={{ ...primaryButton, width: isMobile ? "100%" : "auto" }}>
                 Mở Google Maps
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" style={secondaryButton}>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" style={{ ...secondaryButton, width: isMobile ? "100%" : "auto" }}>
                 Xem fanpage
               </a>
             </div>
           </div>
 
-          <div style={{ ...glassCard, overflow: "hidden", minHeight: 440 }}>
+          <div style={{ ...glassCard, overflow: "hidden", minHeight: isMobile ? 300 : 440 }}>
             <iframe
-              title="Forever Coffee & Beer Map"
-              src="https://www.google.com/maps?q=B38%20%C4%90%C6%B0%E1%BB%9Dng%204A%2C%20P.%20T%C3%A2n%20H%C6%B0ng%2C%20Q.7&output=embed"
-              style={{ width: "100%", height: "100%", minHeight: 440, border: 0 }}
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      <footer style={{ borderTop: `1px solid ${colors.border}`, background: colors.bg }}>
-        <div
-          style={{
-            ...containerStyle,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 12,
-            flexWrap: "wrap",
-            paddingTop: 24,
-            paddingBottom: 24,
-            fontSize: 14,
-            color: "rgba(245,230,211,0.60)",
-          }}
-        >
-          <div>© 2026 FOREVER Coffee & Beer. All rights reserved.</div>
-          <div>Thiết kế theo phong cách cinematic · ấm áp · hiện đại</div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+              title="Forever Coffee & Beer
