@@ -13,49 +13,49 @@ export default function ForeverLandingPage() {
       items: [
         {
           name: "Cà phê đá/nóng",
-          price: "20k",
+          price: "20.000",
           desc: "Đậm vị cà phê truyền thống, phù hợp buổi sáng và những người thích vị mạnh.",
           image: img("IMG_0096.JPG"),
         },
         {
           name: "Cà phê sữa",
-          price: "23k",
+          price: "23.000",
           desc: "Cà phê sữa đá quen thuộc, cân bằng giữa vị cà phê và sữa.",
           image: img("IMG_0100.JPG"),
         },
         {
           name: "Bạc xỉu",
-          price: "23k",
+          price: "23.000",
           desc: "Béo nhẹ, thơm sữa, dễ uống và rất hợp khách thích vị ngọt dịu.",
           image: img("IMG_0097.JPG"),
         },
         {
           name: "Cà phê đá xay",
-          price: "30k",
+          price: "30.000",
           desc: "Mát lạnh, đậm vị cà phê, phong cách trẻ trung và dễ thưởng thức.",
           image: img("IMG_0099.JPG"),
         },
         {
           name: "Cà phê đá xay bạc hà",
-          price: "30k",
+          price: "30.000",
           desc: "Biến tấu mát lạnh với bạc hà, hợp những buổi chiều cần cảm giác sảng khoái.",
           image: img("IMG_0106.JPG"),
         },
         {
           name: "Cà phê sữa bạc hà",
-          price: "28k",
+          price: "28.000",
           desc: "Sữa cà phê kết hợp bạc hà, vị lạ miệng và hiện đại.",
           image: img("IMG_0098.JPG"),
         },
         {
           name: "Cà phê latte",
-          price: "33k",
+          price: "33.000",
           desc: "Latte mượt mà, đẹp mắt, phù hợp phong cách chill của FOREVER.",
           image: img("IMG_0094.JPG"),
         },
         {
           name: "Matcha latte",
-          price: "33k",
+          price: "33.000",
           desc: "Matcha dịu, thơm sữa, xanh mát và rất hợp chụp ảnh.",
           image: img("IMG_0093.JPG"),
         },
@@ -66,43 +66,43 @@ export default function ForeverLandingPage() {
       items: [
         {
           name: "Sữa tươi đá/nóng",
-          price: "25k",
+          price: "25.000",
           desc: "Món nhẹ nhàng, phù hợp mọi lứa tuổi.",
           image: img("IMG_0100.JPG"),
         },
         {
           name: "Sữa tươi trân châu",
-          price: "28k",
+          price: "28.000",
           desc: "Sữa tươi kết hợp topping, dễ uống và trẻ trung.",
           image: img("IMG_0100.JPG"),
         },
         {
           name: "Sữa tươi cà phê",
-          price: "28k",
+          price: "28.000",
           desc: "Sữa tươi pha cà phê, dịu hơn cà phê sữa truyền thống.",
           image: img("IMG_0097.JPG"),
         },
         {
           name: "Sữa chanh sữa tắc",
-          price: "28k",
+          price: "28.000",
           desc: "Chua ngọt thanh mát, phù hợp ngày nóng.",
           image: img("IMG_0144.JPG"),
         },
         {
           name: "Sâm dứa sữa sâm",
-          price: "28k",
+          price: "28.000",
           desc: "Mùi thơm dịu, cảm giác mát và lạ miệng.",
           image: img("IMG_0142.JPG"),
         },
         {
           name: "Dừa sữa đá xay",
-          price: "28k",
+          price: "28.000",
           desc: "Béo thơm vị dừa, mát lạnh, dễ uống.",
           image: img("IMG_0135.JPG"),
         },
         {
           name: "Matcha đá xay",
-          price: "33k",
+          price: "33.000",
           desc: "Đá xay matcha đậm vị, mềm mịn và đẹp mắt.",
           image: img("IMG_0095.JPG"),
         },
@@ -113,37 +113,37 @@ export default function ForeverLandingPage() {
       items: [
         {
           name: "Cacao nóng/đá",
-          price: "28k",
+          price: "28.000",
           desc: "Cacao đậm đà, ngọt dịu, phù hợp ngày mưa hoặc buổi tối.",
           image: img("IMG_0104.JPG"),
         },
         {
           name: "Cacao sữa dầm",
-          price: "30k",
+          price: "30.000",
           desc: "Béo, ngọt nhẹ, đậm vị cacao sữa.",
           image: img("IMG_0101.JPG"),
         },
         {
           name: "Cacao đá xay",
-          price: "30k",
+          price: "30.000",
           desc: "Mát lạnh, chocolate rõ vị, rất hợp khách trẻ.",
           image: img("IMG_0105.JPG"),
         },
         {
           name: "Cacao đá xay bạc hà",
-          price: "33k",
+          price: "33.000",
           desc: "Cacao kết hợp bạc hà tạo cảm giác mát và khác biệt.",
           image: img("IMG_0106.JPG"),
         },
         {
           name: "Cacao đá xay oreo",
-          price: "33k",
-          desc: "Béo thơm với oreo, đậm chất món signature kiểu dessert drink.",
+          price: "33.000",
+          desc: "Béo thơm với oreo, đậm chất món kiểu dessert drink.",
           image: img("IMG_0102.JPG"),
         },
         {
           name: "Cacao dừa",
-          price: "33k",
+          price: "33.000",
           desc: "Cacao pha vị dừa, béo thơm và mềm mịn.",
           image: img("IMG_0103.JPG"),
         },
@@ -152,119 +152,91 @@ export default function ForeverLandingPage() {
     {
       label: "Trà",
       items: [
-        { name: "Hồng trà phúc bồn tử", price: "28k", desc: "Trà trái cây vị phúc bồn tử, thơm và nổi bật.", image: img("IMG_0113.JPG") },
-        { name: "Hồng trà việt quất", price: "28k", desc: "Vị việt quất chua ngọt, màu sắc nổi bật.", image: img("IMG_0108.JPG") },
-        { name: "Hồng trà ổi", price: "28k", desc: "Trà ổi thanh nhẹ, dễ uống.", image: img("IMG_0142.JPG") },
-        { name: "Hồng trà dâu", price: "28k", desc: "Hương dâu dịu, hợp khách thích vị ngọt thanh.", image: img("IMG_0110.JPG") },
-        { name: "Hồng trà đào", price: "28k", desc: "Đào thơm, nhẹ nhàng, rất phổ biến.", image: img("IMG_0114.JPG") },
-        { name: "Hồng trà xí muội tắc", price: "28k", desc: "Chua mặn ngọt nhẹ, rất bắt vị.", image: img("IMG_0145.JPG") },
-        { name: "Hồng trà dưa hấu", price: "28k", desc: "Trà trái cây mát nhẹ với sắc đỏ tươi.", image: img("IMG_0151.JPG") },
-        { name: "Hồng trà lựu", price: "28k", desc: "Lựu đỏ đẹp mắt, vị thanh mát.", image: img("IMG_0143.JPG") },
-        { name: "Hồng trà vải", price: "28k", desc: "Vị vải thanh, thơm nhẹ và dễ uống.", image: img("IMG_0109.JPG") },
-        { name: "Hồng trà nho", price: "28k", desc: "Vị nho nổi bật, màu sắc cuốn hút.", image: img("IMG_0111.JPG") },
-        { name: "Hồng trà xoài", price: "28k", desc: "Vị xoài nhiệt đới, hợp khẩu vị số đông.", image: img("IMG_0107.JPG") },
-        { name: "Hồng trà gừng", price: "28k", desc: "Ấm nhẹ và thư giãn.", image: img("IMG_0147.JPG") },
-        { name: "Hồng trà tắc", price: "28k", desc: "Chua thanh, mát, giải khát tốt.", image: img("IMG_0144.JPG") },
-        { name: "Trà sữa trân châu", price: "28k", desc: "Vị trà sữa quen thuộc, dễ uống.", image: img("IMG_0100.JPG") },
-        { name: "Trà sữa cà phê caramel", price: "33k", desc: "Pha trộn giữa trà sữa, cà phê và caramel.", image: img("IMG_0101.JPG") },
-        { name: "Trà la hán hoa cúc", price: "28k", desc: "Dịu nhẹ, thiên về cảm giác thư giãn.", image: img("IMG_0147.JPG") },
-        { name: "Trà hoa đậu biếc", price: "28k", desc: "Màu sắc đẹp mắt, thanh nhẹ.", image: img("IMG_0108.JPG") },
-        { name: "Trà atiso", price: "28k", desc: "Vị thảo mộc nhẹ, phù hợp khách thích đồ uống dịu.", image: img("IMG_0143.JPG") },
-        { name: "Trà lipton chanh", price: "28k", desc: "Vị chanh quen thuộc, dễ uống, giải khát tốt.", image: img("IMG_0144.JPG") },
-        { name: "Lipton sữa trân châu", price: "30k", desc: "Biến tấu sữa trân châu phong cách lipton.", image: img("IMG_0100.JPG") },
+        { name: "Hồng trà phúc bồn tử", price: "28.000", desc: "Trà trái cây vị phúc bồn tử, thơm và nổi bật.", image: img("IMG_0113.JPG") },
+        { name: "Hồng trà việt quất", price: "28.000", desc: "Vị việt quất chua ngọt, màu sắc nổi bật.", image: img("IMG_0108.JPG") },
+        { name: "Hồng trà ổi", price: "28.000", desc: "Trà ổi thanh nhẹ, dễ uống.", image: img("IMG_0142.JPG") },
+        { name: "Hồng trà dâu", price: "28.000", desc: "Hương dâu dịu, hợp khách thích vị ngọt thanh.", image: img("IMG_0110.JPG") },
+        { name: "Hồng trà đào", price: "28.000", desc: "Đào thơm, nhẹ nhàng, rất phổ biến.", image: img("IMG_0114.JPG") },
+        { name: "Hồng trà xí muội tắc", price: "28.000", desc: "Chua mặn ngọt nhẹ, rất bắt vị.", image: img("IMG_0145.JPG") },
+        { name: "Hồng trà dưa hấu", price: "28.000", desc: "Trà trái cây mát nhẹ với sắc đỏ tươi.", image: img("IMG_0151.JPG") },
+        { name: "Hồng trà lựu", price: "28.000", desc: "Lựu đỏ đẹp mắt, vị thanh mát.", image: img("IMG_0143.JPG") },
+        { name: "Hồng trà vải", price: "28.000", desc: "Vị vải thanh, thơm nhẹ và dễ uống.", image: img("IMG_0109.JPG") },
+        { name: "Hồng trà nho", price: "28.000", desc: "Vị nho nổi bật, màu sắc cuốn hút.", image: img("IMG_0111.JPG") },
+        { name: "Hồng trà xoài", price: "28.000", desc: "Vị xoài nhiệt đới, hợp khẩu vị số đông.", image: img("IMG_0107.JPG") },
+        { name: "Hồng trà gừng", price: "28.000", desc: "Ấm nhẹ và thư giãn.", image: img("IMG_0147.JPG") },
+        { name: "Hồng trà tắc", price: "28.000", desc: "Chua thanh, mát, giải khát tốt.", image: img("IMG_0144.JPG") },
+        { name: "Trà sữa trân châu", price: "28.000", desc: "Vị trà sữa quen thuộc, dễ uống.", image: img("IMG_0100.JPG") },
+        { name: "Trà sữa cà phê caramel", price: "33.000", desc: "Pha trộn giữa trà sữa, cà phê và caramel.", image: img("IMG_0101.JPG") },
+        { name: "Trà la hán hoa cúc", price: "28.000", desc: "Dịu nhẹ, thiên về cảm giác thư giãn.", image: img("IMG_0147.JPG") },
+        { name: "Trà hoa đậu biếc", price: "28.000", desc: "Màu sắc đẹp mắt, thanh nhẹ.", image: img("IMG_0108.JPG") },
+        { name: "Trà atiso", price: "28.000", desc: "Vị thảo mộc nhẹ, phù hợp khách thích đồ uống dịu.", image: img("IMG_0143.JPG") },
+        { name: "Trà lipton chanh", price: "28.000", desc: "Vị chanh quen thuộc, dễ uống, giải khát tốt.", image: img("IMG_0144.JPG") },
+        { name: "Lipton sữa trân châu", price: "30.000", desc: "Biến tấu sữa trân châu phong cách lipton.", image: img("IMG_0100.JPG") },
       ],
     },
     {
       label: "Sinh tố",
       items: [
-        { name: "Sinh tố bơ", price: "30k", desc: "Sinh tố bơ béo mịn, rất hợp phong cách quán.", image: img("IMG_0140.JPG") },
-        { name: "Sinh tố mít", price: "30k", desc: "Mùi mít rõ, ngọt thơm và dễ uống.", image: img("IMG_0128.JPG") },
-        { name: "Sinh tố xoài", price: "30k", desc: "Xoài chín thơm, màu vàng đẹp mắt.", image: img("IMG_0132.JPG") },
-        { name: "Sinh tố dâu", price: "30k", desc: "Màu hồng nổi bật, vị dâu dễ uống.", image: img("IMG_0138.JPG") },
-        { name: "Sinh tố đu đủ", price: "30k", desc: "Ngọt dịu, chất trái cây rõ.", image: img("IMG_0137.JPG") },
-        { name: "Sinh tố chuối", price: "30k", desc: "Béo nhẹ, hợp khách thích món mềm vị.", image: img("IMG_0139.JPG") },
-        { name: "Sinh tố dưa gang", price: "30k", desc: "Mát nhẹ, màu sắc thanh dịu.", image: img("IMG_0136.JPG") },
-        { name: "Sinh tố mãng cầu", price: "30k", desc: "Chua ngọt mềm vị, khá dễ uống.", image: img("IMG_0133.JPG") },
-        { name: "Sinh tố khoai môn", price: "30k", desc: "Màu tím nhẹ, vị béo đặc trưng.", image: img("IMG_0134.JPG") },
-        { name: "Sinh tố sapoche", price: "30k", desc: "Mùi sapoche đặc trưng, ngọt dịu.", image: img("IMG_0130.JPG") },
-        { name: "Sinh tố dừa", price: "30k", desc: "Thơm dừa, mát và béo nhẹ.", image: img("IMG_0135.JPG") },
-        { name: "Sinh tố phúc bồn tử", price: "30k", desc: "Màu đẹp, vị berry nổi bật.", image: img("IMG_0131.JPG") },
-        { name: "Sinh tố việt quất", price: "30k", desc: "Màu tím đẹp, vị việt quất thanh nhẹ.", image: img("IMG_0129.JPG") },
+        { name: "Sinh tố bơ", price: "30.000", desc: "Sinh tố bơ béo mịn, rất hợp phong cách quán.", image: img("IMG_0140.JPG") },
+        { name: "Sinh tố mít", price: "30.000", desc: "Mùi mít rõ, ngọt thơm và dễ uống.", image: img("IMG_0128.JPG") },
+        { name: "Sinh tố xoài", price: "30.000", desc: "Xoài chín thơm, màu vàng đẹp mắt.", image: img("IMG_0132.JPG") },
+        { name: "Sinh tố dâu", price: "30.000", desc: "Màu hồng nổi bật, vị dâu dễ uống.", image: img("IMG_0138.JPG") },
+        { name: "Sinh tố đu đủ", price: "30.000", desc: "Ngọt dịu, chất trái cây rõ.", image: img("IMG_0137.JPG") },
+        { name: "Sinh tố chuối", price: "30.000", desc: "Béo nhẹ, hợp khách thích món mềm vị.", image: img("IMG_0139.JPG") },
+        { name: "Sinh tố dưa gang", price: "30.000", desc: "Mát nhẹ, màu sắc thanh dịu.", image: img("IMG_0136.JPG") },
+        { name: "Sinh tố mãng cầu", price: "30.000", desc: "Chua ngọt mềm vị, khá dễ uống.", image: img("IMG_0133.JPG") },
+        { name: "Sinh tố khoai môn", price: "30.000", desc: "Màu tím nhẹ, vị béo đặc trưng.", image: img("IMG_0134.JPG") },
+        { name: "Sinh tố sapoche", price: "30.000", desc: "Mùi sapoche đặc trưng, ngọt dịu.", image: img("IMG_0130.JPG") },
+        { name: "Sinh tố dừa", price: "30.000", desc: "Thơm dừa, mát và béo nhẹ.", image: img("IMG_0135.JPG") },
+        { name: "Sinh tố phúc bồn tử", price: "30.000", desc: "Màu đẹp, vị berry nổi bật.", image: img("IMG_0131.JPG") },
+        { name: "Sinh tố việt quất", price: "30.000", desc: "Màu tím đẹp, vị việt quất thanh nhẹ.", image: img("IMG_0129.JPG") },
       ],
     },
     {
       label: "Nước ép",
       items: [
-        { name: "Nước ép ổi", price: "30k", desc: "Ổi xanh mát, thanh và rất hợp ngày nóng.", image: img("IMG_0142.JPG") },
-        { name: "Nước ép cam", price: "30k", desc: "Cam tươi, vị chua ngọt tự nhiên.", image: img("IMG_0147.JPG") },
-        { name: "Nước ép thơm", price: "30k", desc: "Thơm mát, tươi sáng và dễ uống.", image: img("IMG_0141.JPG") },
-        { name: "Nước ép cà rốt", price: "30k", desc: "Màu cam đẹp, nhẹ nhàng và tốt cho sức khỏe.", image: img("IMG_0150.JPG") },
-        { name: "Nước ép cà chua", price: "30k", desc: "Đậm màu, vị thanh và nổi bật.", image: img("IMG_0151.JPG") },
-        { name: "Cam sữa", price: "30k", desc: "Cam kết hợp sữa, mềm vị hơn nước ép cam truyền thống.", image: img("IMG_0148.JPG") },
-        { name: "Nước ép dưa hấu", price: "30k", desc: "Giải khát tốt, màu đỏ tươi bắt mắt.", image: img("IMG_0143.JPG") },
-        { name: "Đá chanh", price: "30k", desc: "Mát, chua nhẹ, cực kỳ giải khát.", image: img("IMG_0144.JPG") },
-        { name: "Chanh muối", price: "30k", desc: "Vị chanh muối quen thuộc, mát và dễ uống.", image: img("IMG_0145.JPG") },
-        { name: "Chanh dây", price: "30k", desc: "Chua thơm, cực hợp mùa nóng.", image: img("IMG_0146.JPG") },
-        { name: "Cam mật ong", price: "30k", desc: "Cam tươi pha mật ong, ngọt dịu và dễ chịu.", image: img("IMG_0149.JPG") },
+        { name: "Nước ép ổi", price: "30.000", desc: "Ổi xanh mát, thanh và rất hợp ngày nóng.", image: img("IMG_0142.JPG") },
+        { name: "Nước ép cam", price: "30.000", desc: "Cam tươi, vị chua ngọt tự nhiên.", image: img("IMG_0147.JPG") },
+        { name: "Nước ép thơm", price: "30.000", desc: "Thơm mát, tươi sáng và dễ uống.", image: img("IMG_0141.JPG") },
+        { name: "Nước ép cà rốt", price: "30.000", desc: "Màu cam đẹp, nhẹ nhàng và tốt cho sức khỏe.", image: img("IMG_0150.JPG") },
+        { name: "Nước ép cà chua", price: "30.000", desc: "Đậm màu, vị thanh và nổi bật.", image: img("IMG_0151.JPG") },
+        { name: "Cam sữa", price: "30.000", desc: "Cam kết hợp sữa, mềm vị hơn nước ép cam truyền thống.", image: img("IMG_0148.JPG") },
+        { name: "Nước ép dưa hấu", price: "30.000", desc: "Giải khát tốt, màu đỏ tươi bắt mắt.", image: img("IMG_0143.JPG") },
+        { name: "Đá chanh", price: "30.000", desc: "Mát, chua nhẹ, cực kỳ giải khát.", image: img("IMG_0144.JPG") },
+        { name: "Chanh muối", price: "30.000", desc: "Vị chanh muối quen thuộc, mát và dễ uống.", image: img("IMG_0145.JPG") },
+        { name: "Chanh dây", price: "30.000", desc: "Chua thơm, cực hợp mùa nóng.", image: img("IMG_0146.JPG") },
+        { name: "Cam mật ong", price: "30.000", desc: "Cam tươi pha mật ong, ngọt dịu và dễ chịu.", image: img("IMG_0149.JPG") },
       ],
     },
     {
       label: "Soda",
       items: [
-        { name: "Soda bạc hà", price: "30k", desc: "Mát lạnh, the nhẹ, màu sắc tươi sáng.", image: img("IMG_0119.JPG") },
-        { name: "Soda chanh dây", price: "30k", desc: "Chanh dây sủi bọt, chua ngọt nổi bật.", image: img("IMG_0127.JPG") },
-        { name: "Soda chanh đường", price: "30k", desc: "Thanh mát, phù hợp giải khát.", image: img("IMG_0126.JPG") },
-        { name: "Soda dâu", price: "30k", desc: "Màu đỏ đẹp mắt, trẻ trung.", image: img("IMG_0124.JPG") },
-        { name: "Soda đào", price: "30k", desc: "Đào thanh ngọt, nhìn rất bắt mắt.", image: img("IMG_0125.JPG") },
-        { name: "Soda nho", price: "30k", desc: "Màu tím nổi bật, vị nho trẻ trung.", image: img("IMG_0122.JPG") },
-        { name: "Soda phúc bồn tử", price: "30k", desc: "Berry đỏ đậm, vị dễ nhớ.", image: img("IMG_0120.JPG") },
-        { name: "Soda vải", price: "30k", desc: "Thanh nhẹ, trong trẻo và dễ uống.", image: img("IMG_0118.JPG") },
-        { name: "Soda việt quất", price: "30k", desc: "Sủi bọt, xanh tím nổi bật.", image: img("IMG_0117.JPG") },
-        { name: "Soda ổi", price: "30k", desc: "Màu nhẹ, vị ổi thanh mát.", image: img("IMG_0121.JPG") },
-        { name: "Soda xoài", price: "30k", desc: "Xoài vàng đẹp, cảm giác nhiệt đới.", image: img("IMG_0116.JPG") },
-        { name: "Soda kiwi", price: "30k", desc: "Kiwi xanh sáng, rất hợp hình ảnh quảng cáo.", image: img("IMG_0123.JPG") },
-      ],
-    },
-    {
-      label: "Yaourt",
-      items: [
-        { name: "Yaourt đá", price: "25k", desc: "Yaourt đá mát lạnh, đơn giản và dễ uống.", image: img("IMG_0101.JPG") },
-        { name: "Yaourt ổi", price: "28k", desc: "Yaourt kết hợp vị ổi thanh dịu.", image: img("IMG_0142.JPG") },
-        { name: "Yaourt vải", price: "28k", desc: "Nhẹ nhàng, thanh và thơm vải.", image: img("IMG_0109.JPG") },
-        { name: "Yaourt dâu", price: "28k", desc: "Hồng tươi, ngọt nhẹ và dễ uống.", image: img("IMG_0138.JPG") },
-        { name: "Yaourt đào", price: "28k", desc: "Mùi đào nhẹ nhàng, hợp khẩu vị số đông.", image: img("IMG_0114.JPG") },
-        { name: "Yaourt nho", price: "28k", desc: "Vị nho nổi bật, màu sắc đẹp.", image: img("IMG_0111.JPG") },
-        { name: "Yaourt thơm", price: "28k", desc: "Chua ngọt nhẹ, tropical.", image: img("IMG_0141.JPG") },
-        { name: "Yaourt cam tươi", price: "28k", desc: "Cam dịu mát pha cùng yaourt.", image: img("IMG_0147.JPG") },
-        { name: "Yaourt việt quất", price: "28k", desc: "Việt quất thanh, màu đẹp.", image: img("IMG_0129.JPG") },
-        { name: "Yaourt chanh dây", price: "28k", desc: "Chua thơm, mát và dễ uống.", image: img("IMG_0146.JPG") },
-        { name: "Yaourt phúc bồn tử", price: "28k", desc: "Berry đỏ đậm, nổi bật trên menu.", image: img("IMG_0131.JPG") },
-        { name: "Yaourt trái cây dầm", price: "32k", desc: "Nhiều hương vị trái cây trong một món, phù hợp làm món nổi bật.", image: img("IMG_0148.JPG") },
+        { name: "Soda bạc hà", price: "30.000", desc: "Mát lạnh, the nhẹ, màu sắc tươi sáng.", image: img("IMG_0119.JPG") },
+        { name: "Soda chanh dây", price: "30.000", desc: "Chanh dây sủi bọt, chua ngọt nổi bật.", image: img("IMG_0127.JPG") },
+        { name: "Soda chanh đường", price: "30.000", desc: "Thanh mát, phù hợp giải khát.", image: img("IMG_0126.JPG") },
+        { name: "Soda dâu", price: "30.000", desc: "Màu đỏ đẹp mắt, trẻ trung.", image: img("IMG_0124.JPG") },
+        { name: "Soda đào", price: "30.000", desc: "Đào thanh ngọt, nhìn rất bắt mắt.", image: img("IMG_0125.JPG") },
+        { name: "Soda nho", price: "30.000", desc: "Màu tím nổi bật, vị nho trẻ trung.", image: img("IMG_0122.JPG") },
+        { name: "Soda phúc bồn tử", price: "30.000", desc: "Berry đỏ đậm, vị dễ nhớ.", image: img("IMG_0120.JPG") },
+        { name: "Soda vải", price: "30.000", desc: "Thanh nhẹ, trong trẻo và dễ uống.", image: img("IMG_0118.JPG") },
+        { name: "Soda việt quất", price: "30.000", desc: "Sủi bọt, xanh tím nổi bật.", image: img("IMG_0117.JPG") },
+        { name: "Soda ổi", price: "30.000", desc: "Màu nhẹ, vị ổi thanh mát.", image: img("IMG_0121.JPG") },
+        { name: "Soda xoài", price: "30.000", desc: "Xoài vàng đẹp, cảm giác nhiệt đới.", image: img("IMG_0116.JPG") },
+        { name: "Soda kiwi", price: "30.000", desc: "Kiwi xanh sáng, rất hợp hình ảnh quảng cáo.", image: img("IMG_0123.JPG") },
       ],
     },
     {
       label: "Mojito",
       items: [
-        { name: "Mojito bạc hà", price: "39k", desc: "Phiên bản cơ bản mát lạnh, chuẩn mojito.", image: img("IMG_0115.JPG") },
-        { name: "Mojito dâu", price: "39k", desc: "Dâu đỏ nổi bật, trẻ trung và cuốn hút.", image: img("IMG_0110.JPG") },
-        { name: "Mojito dưa gang", price: "39k", desc: "Dịu màu, mát vị, phù hợp phong cách nhẹ.", image: img("IMG_0112.JPG") },
-        { name: "Mojito đào", price: "39k", desc: "Đào thơm, hợp ánh sáng chiều và vibe tropical.", image: img("IMG_0114.JPG") },
-        { name: "Mojito nho", price: "39k", desc: "Nho tím bắt mắt, rất hợp menu quảng cáo.", image: img("IMG_0111.JPG") },
-        { name: "Mojito phúc bồn tử", price: "39k", desc: "Berry đỏ đậm, rất nổi trên hình.", image: img("IMG_0113.JPG") },
-        { name: "Mojito vải", price: "39k", desc: "Ly trong trẻo, thanh mát, dịu vị.", image: img("IMG_0109.JPG") },
-        { name: "Mojito việt quất", price: "39k", desc: "Màu tối đẹp, tạo cảm giác sang hơn.", image: img("IMG_0108.JPG") },
-        { name: "Mojito xoài", price: "39k", desc: "Tropical rõ rệt, màu sắc rực rỡ.", image: img("IMG_0107.JPG") },
-      ],
-    },
-    {
-      label: "Beer & Cocktail",
-      items: [
-        { name: "Beer Ruby", price: "20k", desc: "Bia nhẹ cho menu beer cơ bản của quán.", image: img("IMG_0152.JPG") },
-        { name: "Beer Heniken", price: "28k", desc: "Lựa chọn quen thuộc, phù hợp nhóm khách chill tối.", image: img("IMG_0152.JPG") },
-        { name: "Beer Sài Gòn Xanh", price: "23k", desc: "Dòng bia phổ biến, dễ bán và dễ nhận diện.", image: img("IMG_0152.JPG") },
-        { name: "Beer Tiger", price: "25k", desc: "Bia quen thuộc cho khách đi nhóm.", image: img("IMG_0152.JPG") },
-        { name: "Beer úp ngược trái cây", price: "40k", desc: "Biến tấu nổi bật, hợp hình ảnh quảng cáo.", image: img("IMG_0152.JPG") },
-        { name: "Beer úp ngược rượu", price: "45k", desc: "Phong cách mạnh hơn, phù hợp menu buổi tối.", image: img("IMG_0152.JPG") },
+        { name: "Mojito bạc hà", price: "39.000", desc: "Phiên bản cơ bản mát lạnh, chuẩn mojito.", image: img("IMG_0115.JPG") },
+        { name: "Mojito dâu", price: "39.000", desc: "Dâu đỏ nổi bật, trẻ trung và cuốn hút.", image: img("IMG_0110.JPG") },
+        { name: "Mojito dưa gang", price: "39.000", desc: "Dịu màu, mát vị, phù hợp phong cách nhẹ.", image: img("IMG_0112.JPG") },
+        { name: "Mojito đào", price: "39.000", desc: "Đào thơm, hợp ánh sáng chiều và vibe tropical.", image: img("IMG_0114.JPG") },
+        { name: "Mojito nho", price: "39.000", desc: "Nho tím bắt mắt, rất hợp menu quảng cáo.", image: img("IMG_0111.JPG") },
+        { name: "Mojito phúc bồn tử", price: "39.000", desc: "Berry đỏ đậm, rất nổi trên hình.", image: img("IMG_0113.JPG") },
+        { name: "Mojito vải", price: "39.000", desc: "Ly trong trẻo, thanh mát, dịu vị.", image: img("IMG_0109.JPG") },
+        { name: "Mojito việt quất", price: "39.000", desc: "Màu tối đẹp, tạo cảm giác sang hơn.", image: img("IMG_0108.JPG") },
+        { name: "Mojito xoài", price: "39.000", desc: "Tropical rõ rệt, màu sắc rực rỡ.", image: img("IMG_0107.JPG") },
       ],
     },
   ];
@@ -292,6 +264,8 @@ export default function ForeverLandingPage() {
     muted: "rgba(245,230,211,0.78)",
     accent: "#d6b58a",
     accentText: "#120d0a",
+    drinkName: "#e3c295",
+    heading: "#f8efe5",
   };
 
   const shellStyle = {
@@ -440,7 +414,7 @@ export default function ForeverLandingPage() {
               >
                 Menu thật của quán
               </div>
-              <h1 style={{ fontSize: 56, lineHeight: 1.05, margin: "14px 0 0", fontWeight: 900 }}>
+              <h1 style={{ fontSize: 56, lineHeight: 1.05, margin: "14px 0 0", fontWeight: 900, color: colors.heading }}>
                 Thức uống của FOREVER
               </h1>
               <p style={{ fontSize: 18, lineHeight: 1.8, color: colors.muted, marginTop: 18 }}>
@@ -525,7 +499,15 @@ export default function ForeverLandingPage() {
                       alignItems: "flex-start",
                     }}
                   >
-                    <h3 style={{ margin: 0, fontSize: 28, lineHeight: 1.15, fontWeight: 800 }}>
+                    <h3
+                      style={{
+                        margin: 0,
+                        fontSize: 28,
+                        lineHeight: 1.15,
+                        fontWeight: 800,
+                        color: colors.drinkName,
+                      }}
+                    >
                       {item.name}
                     </h3>
                     <span
@@ -604,7 +586,15 @@ export default function ForeverLandingPage() {
                 >
                   {selectedItem.category}
                 </div>
-                <h2 style={{ margin: "18px 0 0", fontSize: 44, lineHeight: 1.1, fontWeight: 900 }}>
+                <h2
+                  style={{
+                    margin: "18px 0 0",
+                    fontSize: 44,
+                    lineHeight: 1.1,
+                    fontWeight: 900,
+                    color: colors.drinkName,
+                  }}
+                >
                   {selectedItem.name}
                 </h2>
                 <div style={{ marginTop: 16, fontSize: 28, fontWeight: 800, color: colors.accent }}>
@@ -693,7 +683,7 @@ export default function ForeverLandingPage() {
           position: "relative",
           overflow: "hidden",
           backgroundImage:
-            "linear-gradient(rgba(18,13,10,0.55), rgba(18,13,10,0.85)), url(/drinks/IMG_0153.JPG)",
+            "linear-gradient(rgba(18,13,10,0.55), rgba(18,13,10,0.85)), url(https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -727,12 +717,12 @@ export default function ForeverLandingPage() {
             >
               Forever, nơi bình yên là thật!
             </div>
-            <h1 style={{ fontSize: 76, lineHeight: 1.02, margin: 0, fontWeight: 900, maxWidth: 720 }}>
+            <h1 style={{ fontSize: 76, lineHeight: 1.02, margin: 0, fontWeight: 900, maxWidth: 720, color: colors.heading }}>
               FOREVER <span style={{ color: colors.accent }}>Coffee & Beer</span>
             </h1>
             <p style={{ marginTop: 24, maxWidth: 640, fontSize: 22, lineHeight: 1.8, color: colors.muted }}>
-              Menu thật, ảnh thật, không gian chill thật. Một nơi để gặp bạn bè, ngồi lại lâu hơn,
-              thưởng thức cà phê, trà, soda, mojito và những ly đồ uống mang chất riêng của FOREVER.
+              Một không gian thư giãn, ấm áp và có chiều sâu. Nơi những ly cà phê, trà, soda,
+              mojito và những câu chuyện đẹp cùng nhau ở lại lâu hơn một chút.
             </p>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 28 }}>
               <button onClick={() => setPage("menu")} style={primaryButton}>
@@ -766,7 +756,7 @@ export default function ForeverLandingPage() {
                 Ấm áp · Đêm · Chill
               </div>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: colors.muted, marginTop: 14 }}>
-                Ánh sáng vàng, đồ uống thật, hình ảnh thật và cảm giác gần gũi đúng chất FOREVER.
+                Ánh sáng vàng, đồ uống thật và cảm giác gần gũi đúng chất FOREVER.
               </p>
             </div>
             <div style={{ ...glassCard, padding: 24, background: "rgba(43,28,18,0.80)" }}>
@@ -784,7 +774,7 @@ export default function ForeverLandingPage() {
                 {allItems.length} món đồ uống
               </div>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: colors.muted, marginTop: 14 }}>
-                Cập nhật từ bảng menu thật của quán và ảnh đồ uống thật anh đã làm.
+                Cập nhật từ bảng menu thật của quán và ảnh đồ uống thật.
               </p>
             </div>
             <div
@@ -808,11 +798,9 @@ export default function ForeverLandingPage() {
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>
-                    9 nhóm
-                  </div>
+                  <div style={{ fontSize: 44, fontWeight: 900, color: colors.accent }}>8 nhóm</div>
                   <div style={{ marginTop: 8, fontSize: 14, color: colors.muted }}>
-                    Cà phê, trà, sữa, cacao, sinh tố, nước ép, soda, yaourt, mojito
+                    Cà phê, sữa, cacao, trà, sinh tố, nước ép, soda, mojito
                   </div>
                 </div>
                 <div>
@@ -840,7 +828,7 @@ export default function ForeverLandingPage() {
             <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Giới thiệu
             </div>
-            <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900 }}>
+            <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900, color: colors.heading }}>
               Không chỉ là quán cà phê
             </h2>
             <p style={{ marginTop: 24, fontSize: 20, lineHeight: 1.85, color: colors.muted }}>
@@ -877,7 +865,7 @@ export default function ForeverLandingPage() {
         <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
           Hình ảnh
         </div>
-        <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900 }}>
+        <h2 style={{ margin: "16px 0 0", fontSize: 56, lineHeight: 1.1, fontWeight: 900, color: colors.heading }}>
           Một chút không khí của FOREVER
         </h2>
         <div
@@ -909,14 +897,14 @@ export default function ForeverLandingPage() {
             <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.30em", color: colors.accent }}>
               Liên hệ
             </div>
-            <h2 style={{ margin: "16px 0 0", fontSize: 48, lineHeight: 1.12, fontWeight: 900 }}>
+            <h2 style={{ margin: "16px 0 0", fontSize: 48, lineHeight: 1.12, fontWeight: 900, color: colors.heading }}>
               Ghé quán một tối gần nhất
             </h2>
             <div style={{ marginTop: 28, display: "grid", gap: 14, fontSize: 20, lineHeight: 1.8, color: colors.muted }}>
               <div><span style={{ color: colors.text, fontWeight: 700 }}>Địa chỉ:</span> B38 Đường 4A, P. Tân Hưng, Q.7</div>
-              <div><span style={{ color: colors.text, fontWeight: 700 }}>Điện thoại:</span> 0708 888 0891</div>
+              <div><span style={{ color: colors.text, fontWeight: 700 }}>Điện thoại:</span> 078 888 0891</div>
               <div><span style={{ color: colors.text, fontWeight: 700 }}>Facebook:</span> FOREVER Coffee & Beer</div>
-              <div><span style={{ color: colors.text, fontWeight: 700 }}>Giờ mở cửa:</span> 07:00 – 23:00</div>
+              <div><span style={{ color: colors.text, fontWeight: 700 }}>Giờ mở cửa:</span> 10:00 – 23:00</div>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26 }}>
               <a href="https://maps.google.com" target="_blank" rel="noreferrer" style={primaryButton}>
